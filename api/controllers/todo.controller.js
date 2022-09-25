@@ -72,3 +72,39 @@ exports.deleteTodo = async (req, res) => {
 
   return res.noContent();
 };
+
+exports.updateTodo = async (req, res) => {
+  const id = req.params.id;
+  if (!isUuid(id)) return res.badRequest("Invalid id");
+
+  const todoExist = db.todos.findOne({ id });
+  if (!todoExist) return res.notFound("Todo not found");
+
+  const allowedKeys = ["todo", "dateTime"];
+  for (const key of allowedKeys) {
+    if (req.body[key] && !req.body[key].trim())
+      return res.badRequest(`${key} is missing`);
+    else req.body[key] = req.body[key].trim();
+  }
+
+  const { todo, dateTime } = req.body;
+  if (todo) {
+    const nameTaken = db.todos.findOne({
+      todo: todo.toLowerCase(),
+      id: { $ne: id },
+    });
+    if (nameTaken) return res.badRequest("Todo already exists");
+
+    todoExist.todo = todo.toLowerCase();
+  }
+  if (dateTime) {
+    if (new Date(dateTime).toString() === "Invalid Date")
+      return res.badRequest("Invalid date time format");
+
+    todoExist.dateTime = new Date(dateTime);
+  }
+
+  db.todos.update(todoExist);
+
+  return res.noContent();
+};
