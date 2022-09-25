@@ -7,7 +7,7 @@ exports.badRequest = function (message, data) {
 exports.created = function (message, data) {
   const resJson = { success: true, message };
   if (data) resJson.data = data;
-  return this.status(201).json(resJson); 
+  return this.status(201).json(resJson);
 };
 
 exports.unexpected = function () {
@@ -30,4 +30,8 @@ exports.unAuth = function (message, data) {
   const resJson = { success: false, message };
   if (data) resJson.data = data;
   return this.status(401).json(resJson);
+};
+
+exports.noContent = function () {
+  return this.status(204).send();
 };

@@ -60,3 +60,15 @@ exports.getOneTodo = async (req, res) => {
     createdAt: todo.createdAt,
   });
 };
+
+exports.deleteTodo = async (req, res) => {
+  const id = req.params.id;
+  if (!isUuid(id)) return res.badRequest("Invalid id");
+
+  const todo = db.todos.findOne({ id });
+  if (!todo) return res.notFound("Todo not found");
+
+  db.todos.remove(todo);
+
+  return res.noContent();
+};

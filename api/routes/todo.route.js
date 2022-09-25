@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post("/", controller.createTodo);
 router.get("/", controller.getTodos);
-router.get("/:id", controller.getOneTodo);
+router.route("/:id").get(controller.getOneTodo).delete(controller.deleteTodo);
 
 module.exports = router;
