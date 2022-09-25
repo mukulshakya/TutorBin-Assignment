@@ -1,0 +1,631 @@
+{
+	"info": {
+		"_postman_id": "25b00185-a6ad-43fd-98d9-8b4375da841d",
+		"name": "TutorBin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11283765"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mukul\",\n    \"password\": \"Aa123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/users/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sign up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"mukul\",\n    \"password\": \"Aa123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3030/users/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"users",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-nUjbuPNnXiC9lSJLwYS1ZLKdr0Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 14:28:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Signup successfull\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"mukul\",\n    \"password\": \"Aa123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3030/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"mukul\",\n    \"password\": \"Aa123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3030/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "216"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d8-VSrmOtmLwJMzLuB4m+2iYjupCaA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 13:27:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successfull\",\n    \"data\": {\n        \"username\": \"mukul\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11a3VsIiwiaWF0IjoxNjY0MTEyNDUwfQ.fSj8Kv_svau51kwZ8hniMncD9HDluvDh8zwSlnjU99c\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Todos",
+			"item": [
+				{
+					"name": "create a todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11a3VsIiwiaWF0IjoxNjU2MDc4OTQ2fQ.ZYlAIIjWf-U6pE7zy0lHD-bamighbMTJlsnOPEEgjyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"todo\": \"do workout\",\n    \"dateTime\": \"2022-09-25T13:47:06.773Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"todos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create a todo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"todo\": \"do workout\",\n    \"dateTime\": \"2022-09-25T13:47:06.773Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/todos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-AEeGzt7QRQFmquJhHFypviCLl7Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 14:32:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Todo created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update a todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11a3VsIiwiaWF0IjoxNjU2MDc4OTQ2fQ.ZYlAIIjWf-U6pE7zy0lHD-bamighbMTJlsnOPEEgjyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"todo\": \"jogging\",\n    \"dateTime\": \"2022-09-25T13:47:06.773Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3030/todos/583a6f48-f0a5-4761-8bf8-af097ebc0839",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"todos",
+								"583a6f48-f0a5-4761-8bf8-af097ebc0839"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update a todo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"todo\": \"jogging\",\n    \"dateTime\": \"2022-09-25T13:47:06.773Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3030/todos/583a6f48-f0a5-4761-8bf8-af097ebc0839",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"todos",
+										"583a6f48-f0a5-4761-8bf8-af097ebc0839"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 14:33:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "get all todos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11a3VsIiwiaWF0IjoxNjU2MDc4OTQ2fQ.ZYlAIIjWf-U6pE7zy0lHD-bamighbMTJlsnOPEEgjyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3030/todos/",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"todos",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all todos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3030/todos/",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"todos",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "594"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"252-ilxxfmWAsLjl0X+xHnvdmnQ+UsA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 14:33:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request successfull\",\n    \"data\": [\n        {\n            \"id\": \"583a6f48-f0a5-4761-8bf8-af097ebc0839\",\n            \"username\": \"mukul\",\n            \"todo\": \"jogging\",\n            \"dateTime\": \"2022-09-25T13:47:06.773Z\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2022-09-25T14:29:05.462Z\"\n        },\n        {\n            \"id\": \"b1c4afe6-7033-4b4d-8d05-0863495a03ec\",\n            \"username\": \"mukul\",\n            \"todo\": \"hello 2\",\n            \"dateTime\": \"2022-09-25T13:47:06.773Z\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2022-09-25T14:29:17.033Z\"\n        },\n        {\n            \"id\": \"cef8e7c1-0607-4ddb-a770-e366ef83a4ce\",\n            \"username\": \"mukul\",\n            \"todo\": \"do workout\",\n            \"dateTime\": \"2022-09-25T13:47:06.773Z\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2022-09-25T14:32:20.812Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get a todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11a3VsIiwiaWF0IjoxNjU2MDc4OTQ2fQ.ZYlAIIjWf-U6pE7zy0lHD-bamighbMTJlsnOPEEgjyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3030/todos/583a6f48-f0a5-4761-8bf8-af097ebc0839",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"todos",
+								"583a6f48-f0a5-4761-8bf8-af097ebc0839"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get a todo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3030/todos/583a6f48-f0a5-4761-8bf8-af097ebc0839",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"todos",
+										"583a6f48-f0a5-4761-8bf8-af097ebc0839"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-uXb8O9ZUYaGZ1JWUcs3urOnC1w4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 14:34:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Request successfull\",\n    \"data\": {\n        \"id\": \"583a6f48-f0a5-4761-8bf8-af097ebc0839\",\n        \"username\": \"mukul\",\n        \"todo\": \"jogging\",\n        \"dateTime\": \"2022-09-25T13:47:06.773Z\",\n        \"status\": \"pending\",\n        \"createdAt\": \"2022-09-25T14:29:05.462Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete a todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11a3VsIiwiaWF0IjoxNjU2MDc4OTQ2fQ.ZYlAIIjWf-U6pE7zy0lHD-bamighbMTJlsnOPEEgjyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3030/todos/583a6f48-f0a5-4761-8bf8-af097ebc0839",
+							"host": [
+								"localhost"
+							],
+							"port": "3030",
+							"path": [
+								"todos",
+								"583a6f48-f0a5-4761-8bf8-af097ebc0839"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete a todo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3030/todos/583a6f48-f0a5-4761-8bf8-af097ebc0839",
+									"host": [
+										"localhost"
+									],
+									"port": "3030",
+									"path": [
+										"todos",
+										"583a6f48-f0a5-4761-8bf8-af097ebc0839"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Sep 2022 14:34:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
