@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const db = require("../../db");
+const { uuid } = require("uuidv4");
 
 const saltRounds = 10;
 
@@ -23,7 +24,7 @@ exports.signUp = async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-  db.users.insert({ username, password: hashedPassword });
+  db.users.insert({ id: uuid(), username, password: hashedPassword });
 
   return res.created("Signup successfull");
 };
