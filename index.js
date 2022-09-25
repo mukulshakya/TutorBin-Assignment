@@ -26,3 +26,5 @@ app.use((err, req, res, next) => err && res.unexpected());
 
 // Spin up server
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+module.exports = app;

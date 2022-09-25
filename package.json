@@ -17,5 +17,17 @@
     "jsonwebtoken": "^8.5.1",
     "lokijs": "^1.5.12",
     "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3",
+    "supertest": "^6.2.4"
+  },
+  "jest": {
+    "globalSetup": "./scripts/jestGlobalSetup.js",
+    "globalTeardown": "./scripts/jestGlobalTeardown.js",
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
