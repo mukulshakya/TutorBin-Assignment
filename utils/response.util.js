@@ -19,3 +19,15 @@ exports.ok = function (data, message) {
   if (data) resJson.data = data;
   return this.status(200).json(resJson);
 };
+
+exports.notFound = function (message, data) {
+  const resJson = { success: false, message };
+  if (data) resJson.data = data;
+  return this.status(404).json(resJson);
+};
+
+exports.unAuth = function (message, data) {
+  const resJson = { success: false, message };
+  if (data) resJson.data = data;
+  return this.status(401).json(resJson);
+};
